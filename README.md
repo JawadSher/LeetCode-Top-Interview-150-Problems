@@ -4,7 +4,7 @@
 
 ### 🔥 A focused journey through the most important interview problems — one topic at a time.
 
-[![License](https://img.shields.io/github/license/JawadSher/Leetcode-Top-150-Questions)](LICENSE)
+[![License](https://img.shields.io/github/license/JawadSher/LeetCode-Top-Interview-150-Problems)](LICENSE)
 [![Problems](https://img.shields.io/badge/problems-150-orange?logo=leetcode)](https://leetcode.com/studyplan/top-interview-150/)
 [![Status](https://img.shields.io/badge/status-in--progress-yellow)](https://github.com/JawadSher/Leetcode-Top-150-Questions)
 [![Language](https://img.shields.io/badge/language-C++-blue?logo=cplusplus)](https://isocpp.org/)
