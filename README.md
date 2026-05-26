@@ -1,6 +1,6 @@
 <div align="center">
 
-# L E E T C O D E &nbsp; T O P &nbsp; 1 5 0 &nbsp; Q U E S T I O N S
+# L E E T C O D E &nbsp; T O P &nbsp; 1 5 0 &nbsp; P R O B L E M S
 
 ### 🔥 A focused journey through the most important interview problems — one topic at a time.
 
