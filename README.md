@@ -128,8 +128,8 @@ Leetcode-Top-150-Questions/
 
 ```bash
 # Clone the repository
-git clone https://github.com/JawadSher/Leetcode-Top-150-Questions.git
-cd Leetcode-Top-150-Questions
+git clone https://github.com/JawadSher/LeetCode-Top-Interview-150-Problems.git
+cd LeetCode-Top-Interview-150-Problems
 ```
 
 Browse by topic folder. Each problem folder contains:
