@@ -6,9 +6,11 @@
 
 [![License](https://img.shields.io/github/license/JawadSher/LeetCode-Top-Interview-150-Problems)](LICENSE)
 [![Problems](https://img.shields.io/badge/problems-150-orange?logo=leetcode)](https://leetcode.com/studyplan/top-interview-150/)
-[![Status](https://img.shields.io/badge/status-in--progress-yellow)](https://github.com/JawadSher/Leetcode-Top-150-Questions)
+[![Status](https://img.shields.io/badge/status-in--progress-yellow)](https://github.com/JawadSher/LeetCode-Top-Interview-150-Problems)
 [![Language](https://img.shields.io/badge/language-C++-blue?logo=cplusplus)](https://isocpp.org/)
 [![Study Plan](https://img.shields.io/badge/LeetCode-Top%20Interview%20150-brightgreen?logo=leetcode)](https://leetcode.com/studyplan/top-interview-150/)
+[![Last Commit](https://img.shields.io/github/last-commit/JawadSher/LeetCode-Top-Interview-150-Problems)](https://github.com/JawadSher/LeetCode-Top-Interview-150-Problems/commits/main)
+[![Difficulty](https://img.shields.io/badge/difficulty-Easy%20%7C%20Medium%20%7C%20Hard-red)](https://leetcode.com/studyplan/top-interview-150/)
 
 </div>
 
@@ -20,7 +22,7 @@ Welcome to my **LeetCode Top 150 Questions** repository!
 
 Two years ago, I spent 7–8 months grinding through the complete DSA series by **Love Babbar** and built an entire [DSA repository](https://github.com/JawadSher/DSA-LeetCode-GFG-Problems-Repository) from scratch — covering everything from arrays to graphs. It was a big effort, and I'm proud of it.
 
-Now, after two years, I still remember the *names* — linked lists, graphs, trees, DP — but the *muscle memory* to implement them is rusty. That's completely normal. The knowledge never disappears; it just needs to be re-activated.
+After stepping away from DSA for a while, I still remember the *names* — linked lists, graphs, trees, DP — but the *muscle memory* to implement them has gotten rusty. That's completely normal. The knowledge never disappears; it just needs to be re-activated.
 
 So I decided to go through the **LeetCode Top Interview 150** study plan — a curated set of 150 problems that covers every critical data structure and algorithm pattern asked at top tech companies (Google, Amazon, Meta, Microsoft, etc.).
 
