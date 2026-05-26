@@ -138,31 +138,6 @@ Browse by topic folder. Each problem folder contains:
 
 ---
 
-## 📅 Progress Tracker
-
-| Day | Topics Covered | Problems Solved |
-|-----|---------------|-----------------|
-| 1   | Array & String (Part 1) | — |
-| 2   | Array & String (Part 2) | — |
-| 3   | Two Pointers + Sliding Window | — |
-| 4   | Matrix + HashMap | — |
-| 5   | Intervals + Stack | — |
-| 6   | Linked List (Part 1) | — |
-| 7   | Linked List (Part 2) | — |
-| 8   | Binary Tree General | — |
-| 9   | Binary Tree BFS + BST | — |
-| 10  | Graph General + BFS | — |
-| 11  | Trie + Backtracking | — |
-| 12  | Divide & Conquer + Kadane's | — |
-| 13  | Binary Search | — |
-| 14  | Heap | — |
-| 15  | Bit Manipulation + Math | — |
-| 16  | 1D Dynamic Programming | — |
-| 17  | Multidimensional DP | — |
-| 18–20 | Revision + Remaining | — |
-
----
-
 ## 🔗 Resources
 
 - 📌 [LeetCode Top Interview 150 Study Plan](https://leetcode.com/studyplan/top-interview-150/)
