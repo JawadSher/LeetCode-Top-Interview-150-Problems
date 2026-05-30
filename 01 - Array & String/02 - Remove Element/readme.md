@@ -4,6 +4,8 @@
 
 Given an integer array `nums` and an integer `val`, remove all occurrences of `val` in `nums` **in-place**. The order of the elements may be changed. Then, return the number of elements in `nums` which are not equal to `val`.
 
+**Problem URL** https://leetcode.com/problems/remove-element/description/?envType=study-plan-v2&envId=top-interview-150
+
 ### ⚠️ Constraints & Rules:
 
 1. **In-Place Modification:** You must modify the input array directly with $O(1)$ extra memory. Do not allocate extra space for another array.
