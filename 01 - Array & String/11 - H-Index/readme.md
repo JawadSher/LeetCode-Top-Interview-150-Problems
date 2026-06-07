@@ -1,3 +1,4 @@
+
 # H-Index
 
 ## Problem Statement
@@ -18,7 +19,61 @@ You need to find a maximum threshold number $h$ such that there are at least $h$
 
 ---
 
-## Source Code
+## Approach 1: Optimized Solution (Sorting)
+
+### Source Code
+```cpp
+class Solution {
+public:
+    int hIndex(vector<int>& citations) {
+        int n = citations.size();
+        
+        // Sort the citations in descending order
+        sort(citations.begin(), citations.end(), greater<int>());
+
+        for(int i = 0; i < n; i++){
+            // If the current citation count is less than the number of papers counted so far
+            if(citations[i] < i + 1) return i;
+        }
+
+        return n;
+    }
+};
+
+```
+
+### Code Explanation
+
+1. **Sorting:** We sort the `citations` array in descending order (largest to smallest). This groups the most-cited papers at the beginning of the array.
+2. **Linear Scan:** We iterate through the sorted array using index `i`. The value `i + 1` represents the number of papers tracked so far (since indices are 0-based).
+3. **Break Condition:** Because the array is sorted, as long as `citations[i] >= i + 1`, it means we have found at least `i + 1` papers with a citation count of at least `i + 1`. The moment a paper's citation count drops below this value (`citations[i] < i + 1`), we can no longer maintain a valid h-index including this paper. Since we are looking for the maximum threshold, the valid count up to the previous paper (`i`) is returned immediately.
+4. **Fallback:** If all papers satisfy the condition, the h-index is the total number of papers `n`.
+
+### Dry Run / Iteration Example
+
+Let's trace the execution with **`citations = [3, 0, 6, 1, 5]`** (Total papers $n = 5$).
+
+* **Step 1:** Sort descending $\rightarrow$ `citations = [6, 5, 3, 1, 0]`
+
+| Index (`i`) | Citation Count (`citations[i]`) | Target Count (`i + 1`) | Condition Checked (`citations[i] < i + 1`) | Action |
+| --- | --- | --- | --- | --- |
+| **0** | 6 | 1 | 6 < 1 (False) | Continue loop |
+| **1** | 5 | 2 | 5 < 2 (False) | Continue loop |
+| **2** | 3 | 3 | 3 < 3 (False) | Continue loop |
+| **3** | 1 | 4 | 1 < 4 (**True**) | **Stop & Return `i` (which is 3)** |
+
+**Final Output Returned:** `3`
+
+### Complexity Analysis
+
+* **Time Complexity:** $O(n \log n)$ due to the sorting step. The subsequent linear loop takes $O(n)$ time, making the overall time complexity dominated by the sort algorithm.
+* **Space Complexity:** $O(1)$ auxiliary space if we sort in-place (or $O(\log n)$ depending on the underlying implementation of `std::sort` for the recursive call stack).
+
+---
+
+## Approach 2: Secondary Solution (Brute-Force Linear Search)
+
+### Source Code
 
 ```cpp
 class Solution {
@@ -32,7 +87,7 @@ public:
                 if(citations[j] >= h) cites++;
             }
 
-            if(cites < h) return h-1;
+            if(cites < h) return h - 1;
         }
 
         return n;
@@ -41,50 +96,31 @@ public:
 
 ```
 
----
+### Code Explanation
 
-## Code Explanation
+1. **Outer Loop (`h` from 1 to `n`):** Tests every possible h-index value sequentially up to the total number of published papers.
+2. **Inner Loop (`j` from 0 to `n-1`):** Traverses the entire unsorted array to count how many papers have at least `h` citations.
+3. **Condition Check:** If the tracked number of papers (`cites`) drops below the evaluated benchmark `h`, it implies an h-index of `h` is impossible. The maximum achievable valid h-index up to this failure is returned as `h - 1`.
 
-This approach uses a **brute-force linear search** to find the correct h-index:
+### Dry Run / Iteration Example
 
-1. **Outer Loop (`h` from 1 to `n`):** We test every possible h-index value starting from 1 up to the total number of papers $n$ (since a researcher cannot have an h-index greater than their total number of published papers).
-2. **Inner Loop (`j` from 0 to `n-1`):** For each hypothetical value of `h`, we loop through the entire `citations` array to count how many papers have citations greater than or equal to `h`. This count is stored in the variable `cites`.
-3. **Condition Check:** If at any point the number of papers found (`cites`) is strictly less than the target value `h`, it means it's impossible to achieve an h-index of `h`. Since we are checking sequentially upwards, the maximum valid h-index achieved prior to this failure must be `h - 1`.
-4. **Fallback Return:** If the loop completes successfully for all values up to `n`, it means all papers have at least `n` citations, so we return `n`.
-
----
-
-## Dry Run / Iteration Example
-
-Let's trace the execution with **`citations = [3, 0, 6, 1, 5]`** (Total papers $n = 5$).
+Let's trace the execution with **`citations = [3, 0, 6, 1, 5]`** ($n = 5$).
 
 | Iteration (`h`) | Paper Citations Checked (`citations[j] >= h`) | Count (`cites`) | Condition Checked (`cites < h`) | Action |
 | --- | --- | --- | --- | --- |
-| **h = 1** | 3 $\ge$ 1 (Yes), 0 $\ge$ 1 (No), 6 $\ge$ 1 (Yes), 1 $\ge$ 1 (Yes), 5 $\ge$ 1 (Yes) | **4** | 4 < 1 (False) | Continue loop |
-| **h = 2** | 3 $\ge$ 2 (Yes), 0 $\ge$ 2 (No), 6 $\ge$ 2 (Yes), 1 $\ge$ 2 (No), 5 $\ge$ 2 (Yes) | **3** | 3 < 2 (False) | Continue loop |
-| **h = 3** | 3 $\ge$ 3 (Yes), 0 $\ge$ 3 (No), 6 $\ge$ 3 (Yes), 1 $\ge$ 3 (No), 5 $\ge$ 3 (Yes) | **3** | 3 < 3 (False) | Continue loop |
-| **h = 4** | 3 $\ge$ 4 (No), 0 $\ge$ 4 (No), 6 $\ge$ 4 (Yes), 1 $\ge$ 4 (No), 5 $\ge$ 4 (Yes) | **2** | 2 < 4 (**True**) | **Stop & Return `h - 1` (4 - 1 = 3)** |
+| **h = 1** | 3 $\ge$ 1, 0 $\ge$ 1, 6 $\ge$ 1, 1 $\ge$ 1, 5 $\ge$ 1 | **4** | 4 < 1 (False) | Continue loop |
+| **h = 2** | 3 $\ge$ 2, 0 $\ge$ 2, 6 $\ge$ 2, 1 $\ge$ 2, 5 $\ge$ 2 | **3** | 3 < 2 (False) | Continue loop |
+| **h = 3** | 3 $\ge$ 3, 0 $\ge$ 3, 6 $\ge$ 3, 1 $\ge$ 3, 5 $\ge$ 3 | **3** | 3 < 3 (False) | Continue loop |
+| **h = 4** | 3 $\ge$ 4, 0 $\ge$ 4, 6 $\ge$ 4, 1 $\ge$ 4, 5 $\ge$ 4 | **2** | 2 < 4 (**True**) | **Stop & Return `h - 1` (4 - 1 = 3)** |
 
 **Final Output Returned:** `3`
 
----
+### Complexity Analysis
 
-## Complexity Analysis
-
-### Time Complexity: 
-
+* **Time Complexity:** 
 $$O(n^2)$$
 
-* The outer loop runs $n$ times (from $1$ to $n$).
-* For each iteration of the outer loop, the inner loop traverses the entire array of size $n$.
-* Total operations roughly equal 
-$$n \times n = n^2$$
 
+ because for every possible value of $h$ (up to $n$ values), the inner loop scans the entire array of size $n$.
+* **Space Complexity:** $O(1)$ as it runs entirely in place using fixed scalar loop variables.
 
-, which leads to a quadratic time complexity.
-
-### Space Complexity: 
-
-$$O(1)$$
-
-* The algorithm uses a constant amount of extra space (`n`, `h`, `cites`, and `j`) regardless of the size of the input array. No dynamic tracking or extra arrays are allocated.
