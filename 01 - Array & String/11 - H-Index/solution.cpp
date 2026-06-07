@@ -1,4 +1,4 @@
-// Solution 1: O(N * N)
+// Solution 1: O(N log N)
 class Solution {
 public:
     int hIndex(vector<int>& citations) {
