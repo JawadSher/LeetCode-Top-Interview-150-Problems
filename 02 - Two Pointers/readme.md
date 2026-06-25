@@ -1,38 +1,33 @@
-# Two Pointers - Top Interview 150
+# 02 - Two Pointers
 
-This directory contains solutions to the **Two Pointers** problems from the [LeetCode Top Interview 150](https://leetcode.com/studyplan/top-interview-150/) study plan.
-
-The Two Pointers technique is a powerful and efficient pattern used to solve array and string problems by maintaining two references (pointers) that traverse the data structure in a coordinated manner, typically reducing the time complexity from $O(n^2)$ to $O(n)$ or $O(n \log n)$.
+This folder contains my solutions to the **Two Pointers** section of the [LeetCode Top Interview 150 Study Plan](https://leetcode.com/studyplan/top-interview-150/). These problems utilize the two-pointer technique to solve array and string challenges efficiently, typically reducing time complexity to $O(n)$.
 
 ---
 
-## Solved Problems
+## 📊 Progress Summary
 
-Below are the problems included in this section:
-
-| # | Problem | Concept |
-| --- | --- | --- |
-| 01 | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | String manipulation, pointer convergence |
-| 02 | [Is Subsequence](https://leetcode.com/problems/is-subsequence/) | Linear scan, pointer progression |
-| 03 | [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) | Sorted array optimization, target summation |
-| 04 | [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | Maximize area, greedy approach |
-| 05 | [3Sum](https://leetcode.com/problems/3sum/) | Triplet summation, sorting + pointer logic |
+* **Total Problems Solved:** 5 / 5
+* **🟢 Easy:** 2
+* **🟡 Medium:** 3
+* **🔴 Hard:** 0
 
 ---
 
-## How to Use
+## 📂 Problem List & Solutions
 
-Each folder contains:
-
-1. **Solution Code**: The optimized C++ implementation.
-2. **README.md**: A detailed breakdown of the problem statement, approach, dry-run, and complexity analysis.
-
-## Key Takeaways
-
-* **Pointer Strategy**: Always consider if the data can be sorted first to enable the two-pointer approach.
-* **Efficiency**: Most of these problems are solved in $O(n)$ time complexity, making them highly efficient for large inputs.
-* **Space**: By using pointers rather than auxiliary data structures, these solutions typically achieve $O(1)$ extra space complexity.
+| # | Problem Name | Solution Link | Difficulty | LeetCode Link |
+| --- | --- | --- | --- | --- |
+| 01 | Valid Palindrome | [01 - Valid Palindrome](https://www.google.com/search?q=./01%2520-%2520Valid%2520Palindrome) | 🟢 Easy | [Link](https://www.google.com/search?q=https://leetcode.com/problems/valid-palindrome/) |
+| 02 | Is Subsequence | [02 - Is Subsequence](https://www.google.com/search?q=./02%2520-%2520Is%2520Subsequence) | 🟢 Easy | [Link](https://www.google.com/search?q=https://leetcode.com/problems/is-subsequence/) |
+| 03 | Two Sum II - Input Array Is Sorted | [03 - Two Sum II](https://www.google.com/search?q=./03%2520-%2520Two%2520Sum%2520II%2520-%2520Input%2520Array%2520Is%2520Sorted) | 🟡 Medium | [Link](https://www.google.com/search?q=https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) |
+| 04 | Container With Most Water | [04 - Container With Most Water](https://www.google.com/search?q=./04%2520-%2520Container%2520With%2520Most%2520Water) | 🟡 Medium | [Link](https://www.google.com/search?q=https://leetcode.com/problems/container-with-most-water/) |
+| 05 | 3Sum | [05 - 3Sum](https://www.google.com/search?q=./05%2520-%25203Sum) | 🟡 Medium | [Link](https://www.google.com/search?q=https://leetcode.com/problems/3sum/) |
 
 ---
 
-*This repository is part of a personal collection aimed at mastering the LeetCode Top Interview 150.*
+## 🛠️ Core Concepts Covered
+
+* **Pointer Convergence:** Moving pointers from both ends of a structure toward the center to validate properties or find matches (`Valid Palindrome`, `Two Sum II`, `Container With Most Water`).
+* **Pointer Progression:** Moving pointers in the same direction at different speeds or conditions to check for containment or subsequences (`Is Subsequence`).
+* **Sorted Array Exploitation:** Leveraging sorted properties to make greedy choices, reducing search space without the need for nested iterations (`3Sum`).
+* **Efficiency:** Transforming $O(n^2)$ brute-force approaches into $O(n)$ or $O(n \log n)$ solutions by maintaining state through pointers.
