@@ -1,4 +1,4 @@
-// Un-optimized Solution - O(N)^2 - TLE Caused
+// Un-optimized Solution - O(N * M * K) - TLE Caused
 class Solution {
 public:
     vector<int> findSubstring(string s, vector<string>& words) {
